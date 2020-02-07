@@ -35,7 +35,7 @@
                 </div>
                 <div class="card-body">
                    <h1>{{$noticia->titulo}}</h1>
-                   <p>{{$noticia->cuerpo}}</p>
+                   <p>{{$noticia->articulo}}</p>
                 </div>
             </div>
         </div>

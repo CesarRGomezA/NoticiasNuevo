@@ -50,7 +50,7 @@ class NoticiaController extends Controller
         $noticia = new Noticia();
         $noticia->titulo = 
             $request->input('txtTitulo');
-        $noticia->cuerpo =
+        $noticia->articulo =
             $request->input('txtCuerpo');
         if($noticia->save()) {
             //Si pude guardar la noticia
@@ -119,7 +119,7 @@ class NoticiaController extends Controller
         if ($noticia) {
             $noticia->titulo =
                 $request->input('txtTitulo');
-            $noticia->cuerpo =
+            $noticia->articulo =
                 $request->input('txtCuerpo');
             if ($noticia->save()) {
                 return redirect()->

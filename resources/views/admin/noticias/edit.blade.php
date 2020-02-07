@@ -46,7 +46,7 @@
                         <div class="form-group">
                             <label>Cuerpo</label>
                             <textarea class="form-control" 
-                                rows="12" name="txtCuerpo">{{$noticia->cuerpo}}</textarea>
+                                rows="12" name="txtCuerpo">{{$noticia->articulo}}</textarea>
                         </div>
                         <div class="form-group">
                             <button type="submit"
