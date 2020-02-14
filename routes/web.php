@@ -26,5 +26,17 @@ Route::resource('/admin/noticias',
     'Admin\NoticiaController');
 
 
+
+
+//Atajo para establecer las 7 rutas básicas
+//de un recurso
+//index, show, create, store
+//edit, update, destroy
+Route::resource('/admin/usuarios','Admin\UsuarioController');
+
 Auth::routes(['register' => false]);
+
+
+
+
 

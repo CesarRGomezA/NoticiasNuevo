@@ -6,8 +6,8 @@
 @endsection
 
 
-@section('titulo', 'Administración | Noticias')
-@section('titulo2', 'Lista de Noticias')
+@section('titulo', 'Administración | Usuarios')
+@section('titulo2', 'Lista de Usuarios')
 
 
 @section('breadcrumbs')
@@ -40,18 +40,18 @@
             <div class="card">
                 <!--div class="card-header">
                     <h3 class="card-title">
-                        Lista de noticias
+                        Lista de usurios
                     </h3>
                 </div-->
                 <div class="card-body">
-                    <a href="{{ route('noticias.create') }}" class="btn btn-primary">
-                        <i class="fas fa-plus"></i> Agregar Noticia
+                    <a href="{{ route('usuarios.create') }}" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Agregar Usuario
                     </a>
                     <table class="table">
                         <thead>
                             <tr>
                                 <th>
-                                    Noticia
+                                    Usuarios
                                 </th>
                                 <th>
                                     Acciones
@@ -60,25 +60,25 @@
                         </thead>
 
                         <tbody>
-                            @foreach($noticias as $noticia)
+                            @foreach($usuarios as $usuario)
                                 <tr>
                                     <td>
-                                        {{ $noticia -> titulo }}
+                                        {{ $usuario -> name }}
                                     </td>
 
                                     <td>
                                         <!-- Show -->
-                                        <a href="{{ route('noticias.show', $noticia -> id) }}" class="btn btn-primary">
+                                        <a href="{{ route('usuarios.show', $usuario -> id) }}" class="btn btn-primary">
                                             <i class="fas fa-eye"></i>
                                         </a>
                                             
                                         <!-- Edit -->
-                                        <a href="{{ route('noticias.edit', $noticia -> id) }}" class="btn btn-success">
+                                        <a href="{{ route('usuarios.edit', $usuario -> id) }}" class="btn btn-success">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                             
                                         <!-- Delete -->
-                                        <a href="javascript:;" data-toggle="modal" onclick="deleteData({{ $noticia -> id  }})" data-target="#delete-modal" class="btn btn-danger delete-modal-btn">
+                                        <a href="javascript:;" data-toggle="modal" onclick="deleteData({{ $usuario -> id  }})" data-target="#delete-modal" class="btn btn-danger delete-modal-btn">
                                             <i class="fas fa-times"></i>
                                         </a>
                                     </td>
@@ -90,7 +90,7 @@
             </div>
 
             <!-- Modal -->
-            <form method="POST" id="deleteForm" action="{{route('noticias.destroy', $noticia -> id)}}">
+            <form method="POST" id="deleteForm" action="{{route('usuarios.destroy', $usuario -> id)}}">
                 @csrf
                 @method('DELETE')
                 <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -130,14 +130,14 @@
     function deleteData(id)
     {
         var id = id;
-        var url = '{{ route("noticias.destroy", ":id") }}';
+        var url = '{{ route("usuarios.destroy", ":id") }}';
         url = url.replace(':id', id);
         $("#deleteForm").attr('action', url);
     }
     function formSubmit()
     {
         $("#deleteForm").submit();
-        $("#modal-body").innerHTML("En caso de borrar la noticia no habrá manera de recuperarla.")
+        $("#modal-body").innerHTML("En caso de borrar al usuario no habrá manera de recuperarlo.")
     }
 </script>
 @endsection

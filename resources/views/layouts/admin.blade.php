@@ -107,6 +107,31 @@
                   <p>Nueva noticia</p>
                 </a>
               </li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Usuarios
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('usuarios.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lista</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('usuarios.create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Nuevo usuarios</p>
+                </a>
+              </li>
+              
            
             </ul>
           </li>
