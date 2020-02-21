@@ -44,6 +44,15 @@
                                 name="txtTitulo" class="form-control"/>
                         </div>
                         <div class="form-group">
+                            <label>Imagen</label>
+                            <input type="file" name="imgPortada" class="form-control"/>
+                        </div>
+                        @if($noticia->portada)
+                            <img style="widht: 50px; height: auto;" src="/storage/imgPortadas/{{$noticia->portada}}" />
+                        @else
+                            <p>No hay imagen cargada</p>
+                        @endif
+                        <div class="form-group">
                             <label>Cuerpo</label>
                             <textarea class="form-control" 
                                 rows="12" name="txtCuerpo">{{$noticia->articulo}}</textarea>
