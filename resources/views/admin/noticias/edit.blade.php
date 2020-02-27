@@ -34,7 +34,7 @@
                     <h3 class="card-title">Editar noticia: {{$noticia->id}}</h3>
                 </div>
                 <div class="card-body">
-                    <form method="POST" 
+                    <form method="POST" enctype="multipart/form-data"
                         action="{{route('noticias.update',$noticia->id)}}">
                         @csrf
                         @method('PUT')
@@ -48,7 +48,9 @@
                             <input type="file" name="imgPortada" class="form-control"/>
                         </div>
                         @if($noticia->portada)
+                            <a href="/storage/imgPortadas/{{$noticia->portada}}" target="_blank">
                             <img style="widht: 50px; height: auto;" src="/storage/imgPortadas/{{$noticia->portada}}" />
+                            </a>
                         @else
                             <p>No hay imagen cargada</p>
                         @endif
