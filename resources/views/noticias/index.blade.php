@@ -35,30 +35,23 @@
 					<div class="container">
 						<!-- logo -->
 						<div class="nav-logo">
-							<a href="index.html" class="logo"><img src="./img/logo.png" alt=""></a>
+							<a href="index.html" class="logo">MOYENEWS</a>
 						</div>
 						<!-- /logo -->
 
 						<!-- nav -->
 						<ul class="nav-menu nav navbar-nav">
-							<li><a href="category.html">News</a></li>
-							<li><a href="category.html">Popular</a></li>
-							<li class="cat-1"><a href="category.html">Web Design</a></li>
-							<li class="cat-2"><a href="category.html">JavaScript</a></li>
-							<li class="cat-3"><a href="category.html">Css</a></li>
-							<li class="cat-4"><a href="category.html">Jquery</a></li>
+							<li><a href="category.html">I</a></li>
+							<li><a href="category.html">G</a></li>
+							<li class="cat-1"><a href="category.html">N</a></li>
+							<li class="cat-2"><a href="category.html">O</a></li>
+							<li class="cat-3"><a href="category.html">R</a></li>
+							<li class="cat-4"><a href="category.html">A</a></li>
 						</ul>
 						<!-- /nav -->
 
 						<!-- search & aside toggle -->
-						<div class="nav-btns">
-							<button class="aside-btn"><i class="fa fa-bars"></i></button>
-							<button class="search-btn"><i class="fa fa-search"></i></button>
-							<div class="search-form">
-								<input class="search-input" type="text" name="search" placeholder="Enter Your Search ...">
-								<button class="search-close"><i class="fa fa-times"></i></button>
-							</div>
-						</div>
+						
 						<!-- /search & aside toggle -->
 					</div>
 				</div>
@@ -124,60 +117,31 @@
 			</div>
 			<!-- /Nav -->
         </header>
-
+			<br>
+			<br>
+			
+		@foreach($noticias as $noticia)
         <div class="col-md-4">
 						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-5.jpg" alt=""></a>
+							<a class="post-img" href="/storage/imgPortadas/{{$noticia->portada}}"><img src="/storage/imgPortadas/{{$noticia->portada}}" alt=""></a>
 							<div class="post-body">
 								<div class="post-meta">
-									<a class="post-category cat-3" href="category.html">Jquery</a>
+									<a class="post-category cat-3" href="category.html">{{$noticia->titulo}}</a>
 									<span class="post-date">March 27, 2018</span>
 								</div>
-								<h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
+								<h3 class="post-title"><a href="{{route('noticias.show',$noticia->id)}}">{{$noticia->titulo}}</a></h3>
 							</div>
 						</div>
 					</div>
 					<!-- /post -->
 
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-3.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-1" href="category.html">Web Design</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Pagedraw UI Builder Turns Your Website Design Mockup Into Code Automatically</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
+				
 				</div>
 				<!-- /row -->
 			</div>
 			<!-- /container -->
 		</div>
+		@endforeach
         
-    <h1>Noticias</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Titulo</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($noticias as $noticia)
-                <tr>
-                    
-                    <td>{{$noticia->titulo}}</td>
-                    <td>
-                        <a href="{{route('noticias.show',$noticia->id)}}">Ver mas</a>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
 </body>
 </html>
